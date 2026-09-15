@@ -12,7 +12,6 @@ import utils.Weekdag;
 
 class AanvraagTelewerkTest {
 
-	// tag::constructor[]
 	private AanvraagTelewerk at;
 	 
 	private static final String CORRECTE_NAAM = "Abcde";
@@ -31,9 +30,7 @@ class AanvraagTelewerkTest {
 		 assertEquals(naam, at.getNaam());
 		 assertTrue(at.getDagenThuiswerk().isEmpty());
 	}
-	// end::constructor[]
 	
-	// tag::voegDagToe[]
 	private static final String VERBODEN_DAG_ALS_STRING = "MAANDAG";
 	private static final String AL_GEKOZEN_DAG_ALS_STRING = "DINSDAG";
 	
@@ -66,9 +63,7 @@ class AanvraagTelewerkTest {
 		assertTrue(at.getDagenThuiswerk().contains(AL_GEKOZEN_DAG));
 		assertTrue(at.getDagenThuiswerk().contains(dag)); 			//<6>
 	}
-	// end::voegDagToe[]
 	
-	// tag::controleerVoorVerzenden[]
 	private void maakAanvraagMetDagen(int aantalDagen) { 			//<1>
 		at = new AanvraagTelewerk(CORRECTE_NAAM);
 		for(int i=0; i<aantalDagen; i++)
@@ -88,6 +83,5 @@ class AanvraagTelewerkTest {
 		maakAanvraagMetDagen(aantalDagen); 
 		assertTrue(at.controleerVoorVerzenden());
 	}
-	// end::controleerVoorVerzenden[]
 
 }
